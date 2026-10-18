@@ -283,6 +283,8 @@ transition:
   person4: "/classmates/pranshu.jpeg",
   person5: "/classmates/kasturi.jpeg",
   person6: "/classmates/sunith.jpeg",
+  person7: "/classmates/apoorva.jpeg",
+  person8: "/classmates/ishika.jpeg"
 };
 
       const profiles = [
@@ -321,8 +323,20 @@ transition:
     role: "NA",
     color: "#414552",
     portrait: "person6",
+  },
+  {
+    name: "Apoorva Jalan",
+    role: "NA",
+    color: "#414552",
+    portrait: "person7",
+  },
+  {
+    name: "Ishika Mohadikar",
+    role: "NA",
+    color: "#414552",
+    portrait: "person8",
   }
-  
+
 ];
 
       const stage = document.querySelector("#stage");
