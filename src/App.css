@@ -125,7 +125,11 @@ body {
 
 @media (max-width: 600px) {
   .class-header {
-    padding: 44px 22px 28px;
+    padding: 34px 22px 20px;
+  }
+
+  .class-header h1 {
+    margin: 24px 0 14px;
   }
 
   .section-label {
@@ -134,8 +138,8 @@ body {
   }
 
   .carousel-frame {
-    height: 440px;
-    min-height: 440px;
+    height: 560px;
+    min-height: 560px;
   }
 
   .carousel-frame .character-carousel {

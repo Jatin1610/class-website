@@ -240,7 +240,7 @@ transition:
       }
 
       .card {
-        width: clamp(112px, 31vw, 138px);
+        width: clamp(124px, 34vw, 148px);
         filter: none;
         box-shadow:
           0 8px 20px rgba(0, 0, 0, 0.3),
@@ -367,6 +367,8 @@ transition:
       const count = cards.length;
       let frameId = null;
       let previousActiveIndex = -1;
+      let touchGesture = null;
+      let suppressTouchClickUntil = 0;
 
       function scheduleRender() {
         if (frameId === null && !document.hidden) {
@@ -396,7 +398,61 @@ transition:
         scheduleRender();
       }
 
+      function handleTouchPointerDown(event) {
+        if (event.pointerType !== "touch") {
+          setPointer(event);
+          return;
+        }
+
+        touchGesture = {
+          pointerId: event.pointerId,
+          startX: event.clientX,
+          startY: event.clientY,
+          startPhase: state.targetPhase,
+          startBasePhase: state.basePhase,
+          intent: null
+        };
+      }
+
+      function handleTouchPointerMove(event) {
+        if (!touchGesture || event.pointerId !== touchGesture.pointerId) return;
+
+        const deltaX = event.clientX - touchGesture.startX;
+        const deltaY = event.clientY - touchGesture.startY;
+
+        if (!touchGesture.intent && Math.max(Math.abs(deltaX), Math.abs(deltaY)) > 10) {
+          touchGesture.intent = Math.abs(deltaX) > Math.abs(deltaY) * 1.2
+            ? "horizontal"
+            : "vertical";
+        }
+        if (touchGesture.intent !== "horizontal") return;
+
+        state.active = true;
+        state.basePhase = touchGesture.startBasePhase;
+        state.lastInput = performance.now();
+        const swipeDistance = Math.max(80, stage.clientWidth * 0.28);
+        state.targetPhase = touchGesture.startPhase - deltaX / swipeDistance;
+        scheduleRender();
+      }
+
+      function finishTouchPointer(event) {
+        if (!touchGesture || event.pointerId !== touchGesture.pointerId) return;
+
+        if (touchGesture.intent === "horizontal") {
+          state.basePhase = Math.round(state.targetPhase);
+          state.targetPhase = state.basePhase;
+          state.active = false;
+          state.lastInput = performance.now();
+          suppressTouchClickUntil = performance.now() + 400;
+          scheduleRender();
+        }
+
+        touchGesture = null;
+      }
+
       function setPointer(event) {
+        if (event.pointerType === "touch") return;
+
         const rect = stage.getBoundingClientRect();
         const nx = Math.max(-1, Math.min(1, ((event.clientX - rect.left) / rect.width - 0.5) * 2));
         const ny = Math.max(-1, Math.min(1, ((event.clientY - rect.top) / rect.height - 0.5) * 2));
@@ -424,13 +480,22 @@ transition:
       }
 
       cards.forEach((card, index) => {
-        card.addEventListener("click", () => select(index));
-        card.addEventListener("focus", () => select(index));
+        card.addEventListener("click", () => {
+          if (performance.now() >= suppressTouchClickUntil) select(index);
+        });
+        card.addEventListener("focus", () => {
+          if (!touchGesture) select(index);
+        });
       });
 
       stage.addEventListener("pointermove", setPointer);
-      stage.addEventListener("pointerdown", setPointer);
-      stage.addEventListener("pointerleave", () => {
+      stage.addEventListener("pointerdown", handleTouchPointerDown);
+      window.addEventListener("pointermove", handleTouchPointerMove);
+      window.addEventListener("pointerup", finishTouchPointer);
+      window.addEventListener("pointercancel", finishTouchPointer);
+      stage.addEventListener("pointerleave", (event) => {
+        if (event.pointerType === "touch") return;
+
         state.active = false;
         state.targetPhase = state.basePhase;
         state.pointerX = 0;
