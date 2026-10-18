@@ -34,7 +34,6 @@ body {
 
 .class-page {
   min-height: 100vh;
-  overflow: hidden;
   background:
     radial-gradient(ellipse at 50% 65%, #181716 0%, transparent 58%),
     var(--bg);
@@ -135,7 +134,12 @@ body {
   }
 
   .carousel-frame {
+    height: 440px;
     min-height: 440px;
+  }
+
+  .carousel-frame .character-carousel {
+    min-height: 0;
   }
 
   .class-footer {

@@ -56,7 +56,7 @@ const n = `<!doctype html>
         ),
         #141414;
       perspective: 1100px;
-      touch-action: none;
+      touch-action: pan-y;
       cursor: crosshair;
     }
 
@@ -235,14 +235,31 @@ transition:
         min-height: 520px;
       }
 
+      .stage::after {
+        display: none;
+      }
+
       .card {
         width: clamp(112px, 31vw, 138px);
+        filter: none;
+        box-shadow:
+          0 8px 20px rgba(0, 0, 0, 0.3),
+          inset 0 0 0 1px rgba(0, 0, 0, 0.24);
+        transition: background 700ms ease, color 700ms ease;
+        will-change: transform, opacity;
+      }
+
+      .card.is-active {
+        box-shadow:
+          0 12px 26px rgba(0, 0, 0, 0.38),
+          inset 0 0 0 1px rgba(255, 255, 255, 0.2);
       }
     }
 
     @media (prefers-reduced-motion: reduce) {
       .card {
         will-change: auto;
+        transition: none;
       }
     }
   </style>
@@ -346,7 +363,16 @@ transition:
       };
 
       const reducedMotion = matchMedia("(prefers-reduced-motion: reduce)").matches;
+      const compactViewport = matchMedia("(max-width: 680px)");
       const count = cards.length;
+      let frameId = null;
+      let previousActiveIndex = -1;
+
+      function scheduleRender() {
+        if (frameId === null && !document.hidden) {
+          frameId = requestAnimationFrame(render);
+        }
+      }
 
       function wrappedDelta(index, phase) {
         let delta = index - phase;
@@ -367,6 +393,7 @@ transition:
         state.basePhase += delta;
         state.targetPhase = state.basePhase;
         state.lastInput = performance.now();
+        scheduleRender();
       }
 
       function setPointer(event) {
@@ -385,6 +412,7 @@ transition:
         state.targetPhase = state.basePhase + axis * (window.innerWidth < 680 ? 1.55 : 2.45);
         stage.style.setProperty("--pointer-x", \`\${((nx + 1) / 2) * 100}%\`);
         stage.style.setProperty("--pointer-y", \`\${((ny + 1) / 2) * 100}%\`);
+        scheduleRender();
       }
 
       function toggleOrientation() {
@@ -392,6 +420,7 @@ transition:
         state.targetOrientation = state.targetOrientation > 0.5 ? 0 : 1;
         state.targetPhase = state.basePhase;
         state.lastInput = performance.now();
+        scheduleRender();
       }
 
       cards.forEach((card, index) => {
@@ -408,11 +437,15 @@ transition:
         state.pointerY = 0;
         stage.style.setProperty("--pointer-x", "50%");
         stage.style.setProperty("--pointer-y", "50%");
+        scheduleRender();
       });
 
       stage.addEventListener("dblclick", toggleOrientation);
 
       stage.addEventListener("wheel", (event) => {
+        const vertical = Math.abs(event.deltaY) >= Math.abs(event.deltaX);
+        if (window.innerWidth < 680 && vertical) return;
+
         event.preventDefault();
         const direction = Math.sign(Math.abs(event.deltaY) > Math.abs(event.deltaX) ? event.deltaY : event.deltaX);
         if (!direction) return;
@@ -420,6 +453,7 @@ transition:
         state.targetPhase = state.basePhase;
         state.active = false;
         state.lastInput = performance.now();
+        scheduleRender();
       }, { passive: false });
 
       window.addEventListener("keydown", (event) => {
@@ -437,22 +471,27 @@ transition:
           state.lastInput = performance.now();
         }
         if (event.key === " ") toggleOrientation();
+        if (["ArrowRight", "ArrowDown", "ArrowLeft", "ArrowUp", " "].includes(event.key)) {
+          scheduleRender();
+        }
       });
 
       window.addEventListener("resize", () => {
         if (!state.manualOrientation) {
           state.targetOrientation = window.innerWidth < 680 ? 1 : 0;
         }
+        scheduleRender();
       });
 
       let previousTime = performance.now();
 
       function render(time) {
+        frameId = null;
         const deltaTime = Math.min(32, time - previousTime);
         previousTime = time;
         const ease = reducedMotion ? 1 : 1 - Math.pow(0.0007, deltaTime / 1000);
 
-        if (!state.active && !state.manualOrientation && time - state.lastInput > 4200) {
+        if (!reducedMotion && !state.active && !state.manualOrientation && time - state.lastInput > 4200) {
           const idle = time - state.lastInput - 4200;
           state.targetPhase = state.basePhase + Math.sin(idle * 0.00034) * 1.9;
           state.targetOrientation = (Math.sin(idle * 0.00019 - Math.PI / 2) + 1) / 2;
@@ -497,10 +536,12 @@ transition:
             - delta * 1.4 * state.orientation
           );
 
-          card.style.setProperty("--focus", focus.toFixed(4));
+          if (!compactViewport.matches) {
+            card.style.setProperty("--focus", focus.toFixed(4));
+            card.style.filter = \`blur(\${Math.max(0, distance - 1.35) * 0.45}px) saturate(\${0.72 + focus * 0.28})\`;
+          }
           card.style.zIndex = String(Math.round(1000 - distance * 100));
           card.style.opacity = String(Math.max(0.14, side * 0.82 + focus * 0.18));
-          card.style.filter = \`blur(\${Math.max(0, distance - 1.35) * 0.45}px) saturate(\${0.72 + focus * 0.28})\`;
           card.style.transform = [
             "translate(-50%, -50%)",
             \`translate3d(\${x.toFixed(2)}px, \${y.toFixed(2)}px, \${z.toFixed(2)}px)\`,
@@ -509,18 +550,32 @@ transition:
             \`rotateZ(\${rotateZ.toFixed(2)}deg)\`,
             \`scale(\${scale.toFixed(4)})\`
           ].join(" ");
-          card.setAttribute("aria-current", index === activeIndex ? "true" : "false");
+          if (activeIndex !== previousActiveIndex) {
+            card.setAttribute("aria-current", index === activeIndex ? "true" : "false");
+            card.classList.toggle("is-active", index === activeIndex);
+          }
 const targetColor = index === activeIndex ? "#C6A58A" : "#414552";
 const currentColor = card.style.getPropertyValue("--card-color");
 
 if (currentColor !== targetColor) {
   card.style.setProperty("--card-color", targetColor);
-}card.classList.toggle("is-active", index === activeIndex);        });
+}        });
 
-        requestAnimationFrame(render);
+        previousActiveIndex = activeIndex;
+        if (!reducedMotion) scheduleRender();
       }
 
-      requestAnimationFrame(render);
+      document.addEventListener("visibilitychange", () => {
+        if (document.hidden && frameId !== null) {
+          cancelAnimationFrame(frameId);
+          frameId = null;
+        } else {
+          previousTime = performance.now();
+          scheduleRender();
+        }
+      });
+
+      scheduleRender();
     })();
   <\/script>
 </body>
