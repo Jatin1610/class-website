@@ -284,7 +284,8 @@ transition:
   person5: "/classmates/kasturi.jpeg",
   person6: "/classmates/sunith.jpeg",
   person7: "/classmates/apoorva.jpeg",
-  person8: "/classmates/ishika.jpeg"
+  person8: "/classmates/ishika.jpeg",
+  person9: "/classmates/jiya.jpeg"
 };
 
       const profiles = [
@@ -335,6 +336,12 @@ transition:
     role: "NA",
     color: "#414552",
     portrait: "person8",
+  },
+  {
+    name: "Jiya Meshram",
+    role: "NA",
+    color: "#414552",
+    portrait: "person9",
   }
 
 ];
