@@ -289,7 +289,13 @@ transition:
   person10: "/classmates/komal.jpeg",
   person11: "/classmates/ronak.jpeg",
   person12: "/classmates/prince.jpeg",
-  person13: "/classmates/shobhit.jpeg"
+  person13: "/classmates/shobhit.jpeg",
+  person14: "/classmates/parth.jpeg",
+  person15: "/classmates/himanshu.jpeg",
+  person16: "/classmates/samiksha.jpeg",
+  person17: "/classmates/vedant.jpeg",
+  person18: "/classmates/vibhor.jpeg",
+  person19: "/classmates/abhinay.jpeg"
 };
 
       const profiles = [
@@ -383,7 +389,51 @@ transition:
     color: "#414552",
     portrait: "person13",
     instagram: "https://www.instagram.com/neverrightorwrong/",
-  }
+  },
+  {
+    name: "Parth Raut",
+    role: "NA",
+    color: "#414552",
+    portrait: "person14",
+    instagram: "https://www.instagram.com/parth_raut15/",
+  },
+  {
+    name: "Himanshu Pardi",
+    role: "NA",
+    color: "#414552",
+    portrait: "person15",
+    instagram: "https://www.instagram.com/himanshu_pardhii/",
+  },
+{
+    name: "Samiksha Baitule",
+    role: "NA",
+    color: "#414552",
+    portrait: "person16",
+    instagram: "https://www.instagram.com/sami__kshaa17/",
+  },
+  {
+    name: "Vedant Shinde",
+    role: "NA",
+    color: "#414552",
+    portrait: "person17",
+    instagram: "https://www.instagram.com/is_vedant/",
+  },
+   {
+    name: "Vibhor Jaiswal",
+    role: "NA",
+    color: "#414552",
+    portrait: "person18",
+    instagram: "https://www.instagram.com/vibhorrr._/",
+  },
+  {
+    name: "Abhinay Bode",
+    role: "NA",
+    color: "#414552",
+    portrait: "person19",
+    instagram: "https://www.instagram.com/abhinay_bode008/",
+  },
+  
+
 
 ];
 
