@@ -47,7 +47,7 @@ function LocalCharacterWave() {
       className="character-carousel"
       title="Class character wave"
       srcDoc={srcDoc}
-      sandbox="allow-scripts"
+      sandbox="allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox"
       style={{
         position: "absolute",
         inset: 0,

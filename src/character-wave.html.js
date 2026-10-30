@@ -27,7 +27,6 @@ const n = `<!doctype html>
       height: 100%;
       margin: 0;
       overflow: hidden;
-      touch-action: pan-y;
       background: #121212;
     }
 
@@ -118,7 +117,6 @@ const n = `<!doctype html>
       transform-style: preserve-3d;
       will-change: transform, opacity, filter;
       cursor: pointer;
-      touch-action: pan-y;
     }
 .card {
 transition:
@@ -296,54 +294,63 @@ transition:
     role: "He doesn't aim, but when it's time he aims like Godse",
     color: "#414552",
     portrait: "person1",
+    instagram: "https://www.instagram.com/ojas.lekurwale/",
   },
   {
     name: "Tejas Kirange",
     role: "NA",
     color: "#414552",
     portrait: "person2",
+    instagram: "https://www.instagram.com/tejas_3742/",
   },
   {
     name: "Jatin Behera",
     role: "Not decided",
     color: "#414552",
     portrait: "person3",
+    instagram: "https://www.instagram.com/jasper.jaani/",
   },
   {
     name: "Pranshu Kumar",
     role: "Not decided",
     color: "#414552",
     portrait: "person4",
+    instagram: "https://www.instagram.com/pranshu_bw01/",
   },
   {
     name: "Kasturi Asatkar",
     role: "NA",
     color: "#414552",
     portrait: "person5",
+    instagram: "",
   },
   {
     name: "Sunith Mandal",
     role: "NA",
     color: "#414552",
     portrait: "person6",
+    instagram: "",
   },
   {
     name: "Apoorva Jalan",
     role: "NA",
     color: "#414552",
     portrait: "person7",
+    instagram: "",
   },
   {
     name: "Ishika Mohadikar",
     role: "NA",
     color: "#414552",
     portrait: "person8",
+    instagram: "",
   },
   {
     name: "Jiya Meshram",
     role: "NA",
     color: "#414552",
     portrait: "person9",
+    instagram: "",
   }
 
 ];
@@ -504,7 +511,14 @@ transition:
 
       cards.forEach((card, index) => {
         card.addEventListener("click", () => {
-          if (performance.now() >= suppressTouchClickUntil) select(index);
+          if (performance.now() < suppressTouchClickUntil) return;
+
+          const url = profiles[index].instagram;
+          if (index === nearestIndex() && url) {
+            window.open(url, "_blank", "noopener,noreferrer");
+            return;
+          }
+          select(index);
         });
         card.addEventListener("focus", () => {
           if (!touchGesture) select(index);
