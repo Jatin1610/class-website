@@ -322,35 +322,35 @@ transition:
     role: "NA",
     color: "#414552",
     portrait: "person5",
-    instagram: "",
+    instagram: "https://www.instagram.com/kassturii__/",
   },
   {
     name: "Sunith Mandal",
     role: "NA",
     color: "#414552",
     portrait: "person6",
-    instagram: "",
+    instagram: "https://www.instagram.com/sunithhh__/",
   },
   {
     name: "Apoorva Jalan",
     role: "NA",
     color: "#414552",
     portrait: "person7",
-    instagram: "",
+    instagram: "https://www.instagram.com/apoorvaj_05/",
   },
   {
     name: "Ishika Mohadikar",
     role: "NA",
     color: "#414552",
     portrait: "person8",
-    instagram: "",
+    instagram: "https://www.instagram.com/mohadikarishika/",
   },
   {
     name: "Jiya Meshram",
     role: "NA",
     color: "#414552",
     portrait: "person9",
-    instagram: "",
+    instagram: "https://www.instagram.com/anonymousjiya_/",
   }
 
 ];
