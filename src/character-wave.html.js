@@ -277,180 +277,178 @@ transition:
   <script>
     (() => {
       const portraits = {
-  person1: "/classmates/ojas.jpeg",
-  person2: "/classmates/tejas.jpeg",
-  person3: "/classmates/jatin.jpeg",
-  person4: "/classmates/pranshu.jpeg",
-  person5: "/classmates/kasturi.jpeg",
-  person6: "/classmates/sunith.jpeg",
-  person7: "/classmates/apoorva.jpeg",
-  person8: "/classmates/ishika.jpeg",
-  person9: "/classmates/jiya.jpeg",
-  person10: "/classmates/komal.jpeg",
-  person11: "/classmates/ronak.jpeg",
-  person12: "/classmates/prince.jpeg",
-  person13: "/classmates/shobhit.jpeg",
-  person14: "/classmates/parth.jpeg",
-  person15: "/classmates/himanshu.jpeg",
-  person16: "/classmates/samiksha.jpeg",
-  person17: "/classmates/vedant.jpeg",
-  person18: "/classmates/vibhor.jpeg",
-  person19: "/classmates/abhinay.jpeg",
-  person20: "/classmates/pranay.jpeg",
-  person21: "/classmates/onaswi.jpeg",
-};
+        person1: "/classmates/ojas.jpeg",
+        person2: "/classmates/tejas.jpeg",
+        person3: "/classmates/jatin.jpeg",
+        person4: "/classmates/pranshu.jpeg",
+        person5: "/classmates/kasturi.jpeg",
+        person6: "/classmates/sunith.jpeg",
+        person7: "/classmates/apoorva.jpeg",
+        person8: "/classmates/ishika.jpeg",
+        person9: "/classmates/jiya.jpeg",
+        person10: "/classmates/komal.jpeg",
+        person11: "/classmates/ronak.jpeg",
+        person12: "/classmates/prince.jpeg",
+        person13: "/classmates/shobhit.jpeg",
+        person14: "/classmates/parth.jpeg",
+        person15: "/classmates/himanshu.jpeg",
+        person16: "/classmates/samiksha.jpeg",
+        person17: "/classmates/vedant.jpeg",
+        person18: "/classmates/vibhor.jpeg",
+        person19: "/classmates/abhinay.jpeg",
+        person20: "/classmates/pranay.jpeg",
+        person21: "/classmates/onaswi.jpeg",
+      };
 
       const profiles = [
-  {
-    name: "Ojas Lekurwale",
-    role: "He doesn't aim, but when it's time he aims like Godse",
-    color: "#414552",
-    portrait: "person1",
-    instagram: "https://www.instagram.com/ojas.lekurwale/",
-  },
-  {
-    name: "Tejas Kirange",
-    role: "NA",
-    color: "#414552",
-    portrait: "person2",
-    instagram: "https://www.instagram.com/tejas_3742/",
-  },
-  {
-    name: "Jatin Behera",
-    role: "Not decided",
-    color: "#414552",
-    portrait: "person3",
-    instagram: "https://www.instagram.com/jasper.jaani/",
-  },
-  {
-    name: "Pranshu Kumar",
-    role: "Not decided",
-    color: "#414552",
-    portrait: "person4",
-    instagram: "https://www.instagram.com/pranshu_bw01/",
-  },
-  {
-    name: "Kasturi Asatkar",
-    role: "NA",
-    color: "#414552",
-    portrait: "person5",
-    instagram: "https://www.instagram.com/kassturii__/",
-  },
-  {
-    name: "Sunith Mandal",
-    role: "NA",
-    color: "#414552",
-    portrait: "person6",
-    instagram: "https://www.instagram.com/sunithhh__/",
-  },
-  {
-    name: "Apoorva Jalan",
-    role: "NA",
-    color: "#414552",
-    portrait: "person7",
-    instagram: "https://www.instagram.com/apoorvaj_05/",
-  },
-  {
-    name: "Ishika Mohadikar",
-    role: "NA",
-    color: "#414552",
-    portrait: "person8",
-    instagram: "https://www.instagram.com/mohadikarishika/",
-  },
-  {
-    name: "Jiya Meshram",
-    role: "NA",
-    color: "#414552",
-    portrait: "person9",
-    instagram: "https://www.instagram.com/anonymousjiya_/",
-  },
-  {
-    name: "Komal Gaikwad",
-    role: "NA",
-    color: "#414552",
-    portrait: "person10",
-    instagram: "https://www.instagram.com/komal._.gaikwad/",
-  },
-  {
-    name: "Ronak Premani",
-    role: "NA",
-    color: "#414552",
-    portrait: "person11",
-    instagram: "https://www.instagram.com/xkkuk/",
-  },
-  {
-    name: "Prince Meharchandani",
-    role: "NA",
-    color: "#414552",
-    portrait: "person12",
-    instagram: "https://www.instagram.com/prince.meharchandani/",
-  },
-{
-    name: "Shobhit Kharya",
-    role: "NA",
-    color: "#414552",
-    portrait: "person13",
-    instagram: "https://www.instagram.com/neverrightorwrong/",
-  },
-  {
-    name: "Parth Raut",
-    role: "NA",
-    color: "#414552",
-    portrait: "person14",
-    instagram: "https://www.instagram.com/parth_raut15/",
-  },
-  {
-    name: "Himanshu Pardhi",
-    role: "NA",
-    color: "#414552",
-    portrait: "person15",
-    instagram: "https://www.instagram.com/himanshu_pardhii/",
-  },
-{
-    name: "Samiksha Baitule",
-    role: "NA",
-    color: "#414552",
-    portrait: "person16",
-    instagram: "https://www.instagram.com/sami__kshaa17/",
-  },
-  {
-    name: "Vedant Shinde",
-    role: "NA",
-    color: "#414552",
-    portrait: "person17",
-    instagram: "https://www.instagram.com/is_vedant/",
-  },
-   {
-    name: "Vibhor Jaiswal",
-    role: "NA",
-    color: "#414552",
-    portrait: "person18",
-    instagram: "https://www.instagram.com/vibhorrr._/",
-  },
-  {
-    name: "Abhinay Bode",
-    role: "NA",
-    color: "#414552",
-    portrait: "person19",
-    instagram: "https://www.instagram.com/abhinay_bode008/",
-  },
-  {
-    name: "Pranay Singh Parihar",
-    role: "NA",
-    color: "#414552",
-    portrait: "person20",
-    instagram: "NA",
-  },
-  {
-    name: "Onaswi Gedam",
-    role: "NA",
-    color: "#414552",
-    portrait: "person21",
-    instagram: "https://www.instagram.com/onaswi111/",
-  },
-
-
-];
+        {
+          name: "Ojas Lekurwale",
+          role: "He doesn't aim, but when it's time he aims like Godse",
+          color: "#414552",
+          portrait: "person1",
+          instagram: "https://www.instagram.com/ojas.lekurwale/",
+        },
+        {
+          name: "Tejas Kirange",
+          role: "NA",
+          color: "#414552",
+          portrait: "person2",
+          instagram: "https://www.instagram.com/tejas_3742/",
+        },
+        {
+          name: "Jatin Behera",
+          role: "Not decided",
+          color: "#414552",
+          portrait: "person3",
+          instagram: "https://www.instagram.com/jasper.jaani/",
+        },
+        {
+          name: "Pranshu Kumar",
+          role: "Not decided",
+          color: "#414552",
+          portrait: "person4",
+          instagram: "https://www.instagram.com/pranshu_bw01/",
+        },
+        {
+          name: "Kasturi Asatkar",
+          role: "NA",
+          color: "#414552",
+          portrait: "person5",
+          instagram: "https://www.instagram.com/kassturii__/",
+        },
+        {
+          name: "Sunith Mandal",
+          role: "NA",
+          color: "#414552",
+          portrait: "person6",
+          instagram: "https://www.instagram.com/sunithhh__/",
+        },
+        {
+          name: "Apoorva Jalan",
+          role: "NA",
+          color: "#414552",
+          portrait: "person7",
+          instagram: "https://www.instagram.com/apoorvaj_05/",
+        },
+        {
+          name: "Ishika Mohadikar",
+          role: "NA",
+          color: "#414552",
+          portrait: "person8",
+          instagram: "https://www.instagram.com/mohadikarishika/",
+        },
+        {
+          name: "Jiya Meshram",
+          role: "NA",
+          color: "#414552",
+          portrait: "person9",
+          instagram: "https://www.instagram.com/anonymousjiya_/",
+        },
+        {
+          name: "Komal Gaikwad",
+          role: "NA",
+          color: "#414552",
+          portrait: "person10",
+          instagram: "https://www.instagram.com/komal._.gaikwad/",
+        },
+        {
+          name: "Ronak Premani",
+          role: "NA",
+          color: "#414552",
+          portrait: "person11",
+          instagram: "https://www.instagram.com/xkkuk/",
+        },
+        {
+          name: "Prince Meharchandani",
+          role: "NA",
+          color: "#414552",
+          portrait: "person12",
+          instagram: "https://www.instagram.com/prince.meharchandani/",
+        },
+        {
+          name: "Shobhit Kharya",
+          role: "NA",
+          color: "#414552",
+          portrait: "person13",
+          instagram: "https://www.instagram.com/neverrightorwrong/",
+        },
+        {
+          name: "Parth Raut",
+          role: "NA",
+          color: "#414552",
+          portrait: "person14",
+          instagram: "https://www.instagram.com/parth_raut15/",
+        },
+        {
+          name: "Himanshu Pardhi",
+          role: "NA",
+          color: "#414552",
+          portrait: "person15",
+          instagram: "https://www.instagram.com/himanshu_pardhii/",
+        },
+        {
+          name: "Samiksha Baitule",
+          role: "NA",
+          color: "#414552",
+          portrait: "person16",
+          instagram: "https://www.instagram.com/sami__kshaa17/",
+        },
+        {
+          name: "Vedant Shinde",
+          role: "NA",
+          color: "#414552",
+          portrait: "person17",
+          instagram: "https://www.instagram.com/is_vedant/",
+        },
+        {
+          name: "Vibhor Jaiswal",
+          role: "NA",
+          color: "#414552",
+          portrait: "person18",
+          instagram: "https://www.instagram.com/vibhorrr._/",
+        },
+        {
+          name: "Abhinay Bode",
+          role: "NA",
+          color: "#414552",
+          portrait: "person19",
+          instagram: "https://www.instagram.com/abhinay_bode008/",
+        },
+        {
+          name: "Pranay Singh Parihar",
+          role: "NA",
+          color: "#414552",
+          portrait: "person20",
+          instagram: "NA",
+        },
+        {
+          name: "Onaswi Gedam",
+          role: "NA",
+          color: "#414552",
+          portrait: "person21",
+          instagram: "https://www.instagram.com/onaswi111/",
+        },
+      ];
 
       const stage = document.querySelector("#stage");
       const deck = document.querySelector("#deck");
@@ -463,7 +461,7 @@ transition:
         card.style.setProperty("--card-color", profile.color);
         card.innerHTML = \`
           <span class="portrait">
-            <img src="\${portraits[profile.portrait]}" alt="Generated portrait of \${profile.name}">
+            <img src="\${portraits[profile.portrait]}" decoding="async" alt="Generated portrait of \${profile.name}">
           </span>
           <span class="identity">
             <span class="name">\${profile.name}</span>
@@ -494,6 +492,7 @@ transition:
       const count = cards.length;
       let frameId = null;
       let previousActiveIndex = -1;
+      const cardCache = cards.map(() => ({}));
       let touchGesture = null;
       let suppressTouchClickUntil = 0;
 
@@ -557,7 +556,7 @@ transition:
         state.active = true;
         state.basePhase = touchGesture.startBasePhase;
         state.lastInput = performance.now();
-        const swipeDistance = Math.max(80, stage.clientWidth * 0.28);
+        const swipeDistance = Math.max(55, stage.clientWidth * 0.17);
         state.targetPhase = touchGesture.startPhase - deltaX / swipeDistance;
         scheduleRender();
       }
@@ -611,7 +610,7 @@ transition:
           if (performance.now() < suppressTouchClickUntil) return;
 
           const url = profiles[index].instagram;
-          if (index === nearestIndex() && url) {
+          if (index === nearestIndex() && url && url.startsWith("http")) {
             window.open(url, "_blank", "noopener,noreferrer");
             return;
           }
@@ -735,13 +734,34 @@ transition:
             - delta * 1.4 * state.orientation
           );
 
+          const last = cardCache[index];
+
           if (!compactViewport.matches) {
-            card.style.setProperty("--focus", focus.toFixed(4));
-            card.style.filter = \`blur(\${Math.max(0, distance - 1.35) * 0.45}px) saturate(\${0.72 + focus * 0.28})\`;
+            const focusValue = focus.toFixed(4);
+            if (last.focus !== focusValue) {
+              card.style.setProperty("--focus", focusValue);
+              last.focus = focusValue;
+            }
+            const filterValue = \`blur(\${(Math.max(0, distance - 1.35) * 0.45).toFixed(2)}px) saturate(\${(0.72 + focus * 0.28).toFixed(3)})\`;
+            if (last.filter !== filterValue) {
+              card.style.filter = filterValue;
+              last.filter = filterValue;
+            }
           }
-          card.style.zIndex = String(Math.round(1000 - distance * 100));
-          card.style.opacity = String(Math.max(0.14, side * 0.82 + focus * 0.18));
-          card.style.transform = [
+
+          const zIndexValue = String(Math.round(1000 - distance * 100));
+          if (last.zIndex !== zIndexValue) {
+            card.style.zIndex = zIndexValue;
+            last.zIndex = zIndexValue;
+          }
+
+          const opacityValue = String(Math.max(0.14, side * 0.82 + focus * 0.18));
+          if (last.opacity !== opacityValue) {
+            card.style.opacity = opacityValue;
+            last.opacity = opacityValue;
+          }
+
+          const transformValue = [
             "translate(-50%, -50%)",
             \`translate3d(\${x.toFixed(2)}px, \${y.toFixed(2)}px, \${z.toFixed(2)}px)\`,
             \`rotateX(\${rotateX.toFixed(2)}deg)\`,
@@ -749,16 +769,21 @@ transition:
             \`rotateZ(\${rotateZ.toFixed(2)}deg)\`,
             \`scale(\${scale.toFixed(4)})\`
           ].join(" ");
+          if (last.transform !== transformValue) {
+            card.style.transform = transformValue;
+            last.transform = transformValue;
+          }
+
           if (activeIndex !== previousActiveIndex) {
             card.setAttribute("aria-current", index === activeIndex ? "true" : "false");
             card.classList.toggle("is-active", index === activeIndex);
           }
-const targetColor = index === activeIndex ? "#C6A58A" : "#414552";
-const currentColor = card.style.getPropertyValue("--card-color");
-
-if (currentColor !== targetColor) {
-  card.style.setProperty("--card-color", targetColor);
-}        });
+          const targetColor = index === activeIndex ? "#C6A58A" : "#414552";
+          if (last.color !== targetColor) {
+            card.style.setProperty("--card-color", targetColor);
+            last.color = targetColor;
+          }
+        });
 
         previousActiveIndex = activeIndex;
         if (!reducedMotion) scheduleRender();
