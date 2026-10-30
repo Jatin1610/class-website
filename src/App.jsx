@@ -97,7 +97,7 @@ function App() {
 
       <footer className="class-footer">
         <span>ELECTRONICS AND COMPUTER ENGINEERING</span>
-        <span>O1 KE DHURANDHAR</span>
+        <span>2025-2029</span>
       </footer>
     </main>
   );
