@@ -295,7 +295,9 @@ transition:
   person16: "/classmates/samiksha.jpeg",
   person17: "/classmates/vedant.jpeg",
   person18: "/classmates/vibhor.jpeg",
-  person19: "/classmates/abhinay.jpeg"
+  person19: "/classmates/abhinay.jpeg",
+  person20: "/classmates/pranay.jpeg",
+  person21: "/classmates/onaswi.jpeg",
 };
 
       const profiles = [
@@ -398,7 +400,7 @@ transition:
     instagram: "https://www.instagram.com/parth_raut15/",
   },
   {
-    name: "Himanshu Pardi",
+    name: "Himanshu Pardhi",
     role: "NA",
     color: "#414552",
     portrait: "person15",
@@ -432,7 +434,20 @@ transition:
     portrait: "person19",
     instagram: "https://www.instagram.com/abhinay_bode008/",
   },
-  
+  {
+    name: "Pranay Singh Parihar",
+    role: "NA",
+    color: "#414552",
+    portrait: "person20",
+    instagram: "NA",
+  },
+  {
+    name: "Onaswi Gedam",
+    role: "NA",
+    color: "#414552",
+    portrait: "person21",
+    instagram: "https://www.instagram.com/onaswi111/",
+  },
 
 
 ];
