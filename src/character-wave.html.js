@@ -27,6 +27,7 @@ const n = `<!doctype html>
       height: 100%;
       margin: 0;
       overflow: hidden;
+      touch-action: pan-y;
       background: #121212;
     }
 
@@ -117,6 +118,7 @@ const n = `<!doctype html>
       transform-style: preserve-3d;
       will-change: transform, opacity, filter;
       cursor: pointer;
+      touch-action: pan-y;
     }
 .card {
 transition:
