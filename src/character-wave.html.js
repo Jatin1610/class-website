@@ -289,6 +289,7 @@ transition:
   person10: "/classmates/komal.jpeg",
   person11: "/classmates/ronak.jpeg",
   person12: "/classmates/prince.jpeg",
+  person13: "/classmates/shobhit.jpeg",
 };
 
       const profiles = [
@@ -375,8 +376,14 @@ transition:
     color: "#414552",
     portrait: "person12",
     instagram: "https://www.instagram.com/prince.meharchandani/",
+  },
+{
+    name: "Shobhit Kharya",
+    role: "NA",
+    color: "#414552",
+    portrait: "person12",
+    instagram: "https://www.instagram.com/neverrightorwrong/",
   }
-
 
 ];
 
