@@ -285,7 +285,10 @@ transition:
   person6: "/classmates/sunith.jpeg",
   person7: "/classmates/apoorva.jpeg",
   person8: "/classmates/ishika.jpeg",
-  person9: "/classmates/jiya.jpeg"
+  person9: "/classmates/jiya.jpeg",
+  person10: "/classmates/komal.jpeg",
+  person11: "/classmates/ronak.jpeg",
+  person12: "/classmates/prince.jpeg",
 };
 
       const profiles = [
@@ -351,7 +354,29 @@ transition:
     color: "#414552",
     portrait: "person9",
     instagram: "https://www.instagram.com/anonymousjiya_/",
+  },
+  {
+    name: "Komal Gaikwad",
+    role: "NA",
+    color: "#414552",
+    portrait: "person10",
+    instagram: "https://www.instagram.com/komal._.gaikwad/",
+  },
+  {
+    name: "Ronak Premani",
+    role: "NA",
+    color: "#414552",
+    portrait: "person11",
+    instagram: "https://www.instagram.com/xkkuk/",
+  },
+  {
+    name: "Prince Meharchandani",
+    role: "NA",
+    color: "#414552",
+    portrait: "person12",
+    instagram: "https://www.instagram.com/prince.meharchandani/",
   }
+
 
 ];
 
