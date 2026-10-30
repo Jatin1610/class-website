@@ -298,6 +298,7 @@ transition:
         person19: "/classmates/abhinay.jpeg",
         person20: "/classmates/pranay.jpeg",
         person21: "/classmates/onaswi.jpeg",
+        person22: "/classmates/devanshi.jpeg",
       };
 
       const profiles = [
@@ -344,18 +345,18 @@ transition:
           instagram: "https://www.instagram.com/sunithhh__/",
         },
         {
+          name: "Shobhit Kharya",
+          role: "NA",
+          color: "#414552",
+          portrait: "person13",
+          instagram: "https://www.instagram.com/neverrightorwrong/",
+        },
+        {
           name: "Apoorva Jalan",
           role: "NA",
           color: "#414552",
           portrait: "person7",
           instagram: "https://www.instagram.com/apoorvaj_05/",
-        },
-        {
-          name: "Ishika Mohadikar",
-          role: "NA",
-          color: "#414552",
-          portrait: "person8",
-          instagram: "https://www.instagram.com/mohadikarishika/",
         },
         {
           name: "Jiya Meshram",
@@ -365,18 +366,19 @@ transition:
           instagram: "https://www.instagram.com/anonymousjiya_/",
         },
         {
+          name: "Ishika Mohadikar",
+          role: "NA",
+          color: "#414552",
+          portrait: "person8",
+          instagram: "https://www.instagram.com/mohadikarishika/",
+        },
+        
+        {
           name: "Komal Gaikwad",
           role: "NA",
           color: "#414552",
           portrait: "person10",
           instagram: "https://www.instagram.com/komal._.gaikwad/",
-        },
-        {
-          name: "Ronak Premani",
-          role: "NA",
-          color: "#414552",
-          portrait: "person11",
-          instagram: "https://www.instagram.com/xkkuk/",
         },
         {
           name: "Prince Meharchandani",
@@ -385,12 +387,13 @@ transition:
           portrait: "person12",
           instagram: "https://www.instagram.com/prince.meharchandani/",
         },
+        
         {
-          name: "Shobhit Kharya",
+          name: "Devanshi Chandak",
           role: "NA",
           color: "#414552",
-          portrait: "person13",
-          instagram: "https://www.instagram.com/neverrightorwrong/",
+          portrait: "person22",
+          instagram: "https://www.instagram.com/devanshi_chandak/",
         },
         {
           name: "Parth Raut",
@@ -398,6 +401,13 @@ transition:
           color: "#414552",
           portrait: "person14",
           instagram: "https://www.instagram.com/parth_raut15/",
+        },
+        {
+          name: "Ronak Premani",
+          role: "NA",
+          color: "#414552",
+          portrait: "person11",
+          instagram: "https://www.instagram.com/xkkuk/",
         },
         {
           name: "Himanshu Pardhi",
@@ -448,6 +458,7 @@ transition:
           portrait: "person21",
           instagram: "https://www.instagram.com/onaswi111/",
         },
+
       ];
 
       const stage = document.querySelector("#stage");
