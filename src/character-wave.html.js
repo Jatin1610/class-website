@@ -299,6 +299,11 @@ transition:
         person20: "/classmates/pranay.jpeg",
         person21: "/classmates/onaswi.jpeg",
         person22: "/classmates/devanshi.jpeg",
+        person23: "/classmates/tanushree.jpeg",
+        person24: "/classmates/govind.jpeg",
+        person25: "/classmates/harsh.jpeg",
+        person26: "/classmates/ishaan.jpeg",
+        
       };
 
       const profiles = [
@@ -458,7 +463,34 @@ transition:
           portrait: "person21",
           instagram: "https://www.instagram.com/onaswi111/",
         },
-
+        {
+          name: "Tanushree Lambe",
+          role: "NA",
+          color: "#414552",
+          portrait: "person23",
+          instagram: "https://www.instagram.com/tanushree_lambe/",
+        },
+        {
+          name: "Govind Kshirsagar",
+          role: "NA",
+          color: "#414552",
+          portrait: "person24",
+          instagram: "https://www.instagram.com/govinnnd_kshirsagar7/",
+        },
+{
+          name: "Harsh Mendhe",
+          role: "NA",
+          color: "#414552",
+          portrait: "person25",
+          instagram: "https://www.instagram.com/huehue_harsh/",
+        },
+        {
+          name: "Ishan Tembhare",
+          role: "NA",
+          color: "#414552",
+          portrait: "person26",
+          instagram: "https://www.instagram.com/ishantembhare/",
+        }
       ];
 
       const stage = document.querySelector("#stage");
